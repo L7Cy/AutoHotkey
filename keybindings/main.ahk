@@ -20,3 +20,8 @@ vk1D & Space::Enter
 vk1D & u::BackSpace
 ;無変換＋lでDelete
 vk1D & o::Delete
+
+;無変換+;でmmdd
+vk1D & vkBB::send, %A_Mon%%A_MDay%
+;無変換+:でhh:mm
+vk1D & vkBA::send, %A_Hour%:%A_Min%
