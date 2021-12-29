@@ -15,8 +15,30 @@ vk1D & tab::#Tab
 ;無変換+ikjlで上下左右
 vk1D & i::Up
 vk1D & k::Down
-vk1D & j::Left
-vk1D & l::Right
+vk1D & j::
+    IfWinActive ahk_exe firefox.exe ;firefoxでは戻る
+    {
+        Send, !{Left}
+    }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは戻る
+    {
+        Send, !{Left}
+    }Else
+    {
+        Send, {Blind}{left}
+    }
+Return
+vk1D & l::
+    IfWinActive ahk_exe firefox.exe ;firefoxでは進む
+    {
+        Send, !{Right}
+    }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは進む
+    {
+        Send, !{Right}
+    }Else
+    {
+        Send, {blind}{right}
+    }
+Return
 
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
