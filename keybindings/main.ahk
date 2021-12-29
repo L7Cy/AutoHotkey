@@ -2,7 +2,9 @@
 SendMode, Input
 SetWorkingDir, %A_ScriptDir%
 
-;無変換でIME無効
+;無変換+SpaceでEnter
+vk1D & Space::Enter
+;無変換でIME無効(カタカナひらがなでIME有効)
 vk1D::IME_SET(0)
 ;変換でctrl
 vk1C::Ctrl
@@ -14,6 +16,10 @@ vk1D & tab::#Tab
 ;無変換+qでウィンドウを閉じる
 vk1D & q::!F4
 
+;無変換+uでBackspace
+vk1D & u::BackSpace
+;無変換＋oでDelete
+vk1D & o::Delete
 ;無変換+ikjlで上下左右
 vk1D & i::Up
 vk1D & k::Down
@@ -42,13 +48,6 @@ vk1D & l::
     }
 Return
 
-;無変換+SpaceでEnter
-vk1D & Space::Enter
-
-;無変換+jでBackspace
-vk1D & u::BackSpace
-;無変換＋lでDelete
-vk1D & o::Delete
 
 ;無変換+;でmmdd
 vk1D & vkBB::
