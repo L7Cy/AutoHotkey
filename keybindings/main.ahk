@@ -4,8 +4,8 @@ SetWorkingDir, %A_ScriptDir%
 
 ;無変換でIME無効
 vk1D::IME_SET(0)
-;変換でIME有効
-vk1C::IME_SET(1)
+;変換でctrl
+vk1C::Ctrl
 
 ;無変換+ikjlで上下左右
 vk1D & i::Up
