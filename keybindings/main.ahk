@@ -7,6 +7,11 @@ vk1D::IME_SET(0)
 ;変換でctrl
 vk1C::Ctrl
 
+;無変換+変換でkeypirinhaを起動
+vk1D & vk1C::F13
+;無変換+tabでタスクビュー
+vk1D & tab::#Tab
+
 ;無変換+ikjlで上下左右
 vk1D & i::Up
 vk1D & k::Down
