@@ -22,6 +22,12 @@ vk1D & u::BackSpace
 vk1D & o::Delete
 
 ;無変換+;でmmdd
-vk1D & vkBB::send, %A_Mon%%A_MDay%
+vk1D & vkBB::
+    Clipboard = %A_Mon%%A_MDay%
+    send, ^v
+Return
 ;無変換+:でhh:mm
-vk1D & vkBA::send, %A_Hour%:%A_Min%
+vk1D & vkBA::
+    Clipboard = %A_Hour%:%A_Min%
+    send, ^v
+Return
