@@ -62,6 +62,8 @@ Return
 
 Alt & j::!Left
 Alt & l::!Right
+Alt & i::!Up
+Alt & k::!Down
 
 ;無変換+;でmmdd
 vk1D & vkBB::
