@@ -1,6 +1,7 @@
 ﻿#SingleInstance, Force
 SendMode, Input
 SetWorkingDir, %A_ScriptDir%
+SetTitleMatchMode, 2
 
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
@@ -31,7 +32,7 @@ vk1D & o::Delete
 vk1D & i::Up
 vk1D & k::Down
 vk1D & j::
-    IfWinActive ahk_exe firefox.exe ;firefoxでは戻る
+    IfWinActive, [ahk_exe firefox.exe, , スプレッドシート, ] ;firefoxでは戻る
     {
         Send, !{Left}
     }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは戻る
@@ -43,7 +44,7 @@ vk1D & j::
     }
 Return
 vk1D & l::
-    IfWinActive ahk_exe firefox.exe ;firefoxでは進む
+    IfWinActive, [ahk_exe firefox.exe, , スプレッドシート, ] ;firefoxでは進む
     {
         Send, !{Right}
     }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは進む
