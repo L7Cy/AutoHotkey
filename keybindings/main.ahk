@@ -4,8 +4,8 @@ SetWorkingDir, %A_ScriptDir%
 
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
-;無変換でIME無効(カタカナひらがなでIME有効)
-vk1D::IME_SET(0)
+;AltでIME無効(カタカナひらがなでIME有効)
+Alt::IME_SET(0)
 ;変換でctrl
 vk1C::Ctrl
 
