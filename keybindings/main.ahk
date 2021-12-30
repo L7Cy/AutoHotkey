@@ -13,8 +13,15 @@ vk1C::Ctrl
 vk1D & vk1C::F13
 ;無変換+tabでタスクビュー
 vk1D & tab::#Tab
-;無変換+qでウィンドウを閉じる
-vk1D & q::!F4
+;変換+qでウィンドウを閉じる
+q::
+if GetKeyState("vk1C","P")
+{
+    Send, !{F4}
+    Return
+}
+send, q
+Return
 
 ;無変換+uでBackspace
 vk1D & u::BackSpace
