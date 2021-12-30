@@ -34,10 +34,10 @@ vk1D & k::Down
 vk1D & j::
     IfWinActive, [ahk_exe firefox.exe, , スプレッドシート, ] ;firefoxでは戻る
     {
-        Send, !{Left}
+        ;Send, !{Left}
     }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは戻る
     {
-        Send, !{Left}
+        ;Send, !{Left}
     }Else
     {
         Send, {Blind}{left}
@@ -46,16 +46,18 @@ Return
 vk1D & l::
     IfWinActive, [ahk_exe firefox.exe, , スプレッドシート, ] ;firefoxでは進む
     {
-        Send, !{Right}
+        ;Send, !{Right}
     }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは進む
     {
-        Send, !{Right}
+        ;Send, !{Right}
     }Else
     {
         Send, {blind}{right}
     }
 Return
 
+Alt & j::!Left
+Alt & l::!Right
 
 ;無変換+;でmmdd
 vk1D & vkBB::
