@@ -6,7 +6,11 @@ SetTitleMatchMode, 2
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
 ;AltでIME無効(カタカナひらがなでIME有効)
-Alt::IME_SET(0)
+Alt::
+IME_SET(0)
+Click,1000,1000,0
+Return
+
 ;変換でctrl
 vk1C::Ctrl
 
