@@ -13,6 +13,8 @@ IME_SET(0)
 Click,1000,1000,0
 Return
 
+Alt & Space::!Enter
+
 ;変換でctrl
 vk1C::Ctrl
 
@@ -46,32 +48,46 @@ if GetKeyState("vk1D","P")
 Send, f
 Return
 ;無変換+uでBackspace
-vk1D & u::BackSpace
+vk1D & u::
+if GetKeyState("f", "P")
+{
+    Send, {shiftdown}{home}{backspace}{shiftup}
+    return
+}
+send,{BackSpace}
+Return
 ;無変換＋oでDelete
-vk1D & o::Delete
+vk1D & o::
+if GetKeyState("f", "P")
+{
+    Send, {shiftdown}{end}{delete}{shiftup}
+    return
+}
+send,{Delete}
+return
 ;無変換+ikjlで上下左右
 vk1D & i::
 if GetKeyState("f","P")
 {
-    Send, {PgUp}
+    Send, {Blind}{PgUp}
     return
 }
-Send, {Up}
+Send, {Blind}{Up}
 return
 
 vk1D & k::
 if GetKeyState("f", "P")
 {
-    Send, {Pgdn}
+    Send, {Blind}{Pgdn}
     return
 }
-Send, {down}
+Send, {Blind}{down}
 return
 
 vk1D & j::
 if GetKeyState("f","P")
 {
-    send, {Home}
+    send, {Blind}{Home}
     Return
 }
 Send, {Blind}{left}
@@ -80,7 +96,7 @@ Return
 vk1D & l::
 if GetKeyState("f","P")
 {
-    send, {End}
+    send, {Blind}{End}
     Return
 }
 Send, {blind}{right}
