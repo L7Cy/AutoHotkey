@@ -3,6 +3,8 @@ SendMode, Input
 SetWorkingDir, %A_ScriptDir%
 SetTitleMatchMode, 2
 
+vk1D & F1::Reload
+
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
 ;AltでIME無効(カタカナひらがなでIME有効)
