@@ -29,6 +29,14 @@ if GetKeyState("vk1C","P")
 }
 send, q
 Return
+Space::
+If GetKeyState("vk1C","P")
+{
+    send, ^{enter}
+    return
+}
+send, {space}
+return
 
 ;無変換+uでBackspace
 vk1D & u::BackSpace
