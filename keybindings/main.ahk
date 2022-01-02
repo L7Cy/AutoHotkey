@@ -38,40 +38,52 @@ If GetKeyState("vk1C","P")
 send, {space}
 return
 
+f::
+if GetKeyState("vk1D","P")
+{
+    Return
+}
+Send, f
+Return
 ;無変換+uでBackspace
 vk1D & u::BackSpace
 ;無変換＋oでDelete
 vk1D & o::Delete
 ;無変換+ikjlで上下左右
-vk1D & i::Up
-vk1D & k::Down
+vk1D & i::
+if GetKeyState("f","P")
+{
+    Send, {PgUp}
+    return
+}
+Send, {Up}
+return
+
+vk1D & k::
+if GetKeyState("f", "P")
+{
+    Send, {Pgdn}
+    return
+}
+Send, {down}
+return
+
 vk1D & j::
-    IfWinActive, [ahk_exe firefox.exe, , スプレッドシート, ] ;firefoxでは戻る
-    {
-        Send, {Blind}{left}
-        ;Send, !{Left}
-    }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは戻る
-    {
-        ;Send, !{Left}
-        Send, {Blind}{left}
-    }Else
-    {
-        Send, {Blind}{left}
-    }
+if GetKeyState("f","P")
+{
+    send, {Home}
+    Return
+}
+Send, {Blind}{left}
 Return
+
 vk1D & l::
-    IfWinActive, [ahk_exe firefox.exe, , スプレッドシート, ] ;firefoxでは進む
-    {
-        Send, {blind}{right}
-        ;Send, !{Right}
-    }Else IfWinActive ahk_class CabinetWClass ;エクスプローラーでは進む
-    {
-        Send, {blind}{right}
-        ;Send, !{Right}
-    }Else
-    {
-        Send, {blind}{right}
-    }
+if GetKeyState("f","P")
+{
+    send, {End}
+    Return
+}
+Send, {blind}{right}
 Return
 
 Alt & j::!Left
