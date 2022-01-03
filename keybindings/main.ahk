@@ -7,7 +7,7 @@ SetTitleMatchMode, 2
 vk1D & F1::Reload
 
 ;無変換+変換でueliを起動
-vk1D & vk1C::!+Insert
+vk1D & vk1C::F13
 
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
