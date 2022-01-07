@@ -6,7 +6,7 @@ SetTitleMatchMode, 2
 ;Relord this script
 vk1D & F1::Reload
 
-;無変換+変換でueliを起動
+;無変換+変換でkeypirinhaを起動
 vk1D & vk1C::F13
 
 ;無変換+SpaceでEnter
@@ -44,6 +44,9 @@ if GetKeyState("vk1C","P")
 }
 send, q
 Return
+
+;これがないとctrl+fが効かない
+vk1C & f::^f
 
 ;fを使う準備
 f::
