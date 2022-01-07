@@ -13,20 +13,20 @@ vk1D & vk1C::F13
 vk1D & Space::Enter
 ;変換+SpaceでEnter
 Space::
-If GetKeyState("vk1C","P")
-{
-    send, ^{enter}
-    return
-}
-send, {space}
+    If GetKeyState("vk1C","P")
+    {
+        send, ^{enter}
+        return
+    }
+    send, {space}
 return
 ;alt+spaceでalt+enter
 Alt & Space::!Enter
 
 ;AltでIME無効(カタカナひらがなでIME有効)
 Alt::
-IME_SET(0)
-Click,1000,1000,0 ;マウスカーソルの移動
+    IME_SET(0)
+    Click,1000,1000,0 ;マウスカーソルの移動
 Return
 
 ;変換でctrl
@@ -37,77 +37,77 @@ vk1D & tab::#Tab
 
 ;変換+qでウィンドウを閉じる
 q::
-if GetKeyState("vk1C","P")
-{
-    Send, !{F4}
-    Return
-}
-send, q
+    if GetKeyState("vk1C","P")
+    {
+        Send, !{F4}
+        Return
+    }
+    send, q
 Return
-
-;これがないとctrl+fが効かない
-vk1C & f::^f
 
 ;fを使う準備
 f::
-if GetKeyState("vk1D","P")
-{
-    Return
-}
-Send, f
+    if GetKeyState("vk1D","P")
+    {
+        Return
+    }Else if GetKeyState("vk1C","P")
+    {
+        Send, ^f
+    }
+    Send, f
 Return
 
 ;無変換+uでBackspace
 vk1D & u::
-if GetKeyState("f", "P")
-{
-    Send, {shiftdown}{home}{backspace}{shiftup} ;行のはじめまでbackspace
-    return
-}
-send,{BackSpace}
+    if GetKeyState("f", "P")
+    {
+        Send, {shiftdown}{home}{backspace}{shiftup} ;行のはじめまでbackspace
+        return
+    }
+    send,{BackSpace}
 Return
 ;無変換＋oでDelete
 vk1D & o::
-if GetKeyState("f", "P")
-{
-    Send, {shiftdown}{end}{delete}{shiftup} ;行のおわりまでdelete
-    return
-}
-send,{Delete}
+    if GetKeyState("f", "P")
+    {
+        Send, {shiftdown}{end}{delete}{shiftup} ;行のおわりまでdelete
+        return
+    }
+    send,{Delete}
 return
 
 ;無変換+ikjlで上下左右
 vk1D & i::
-if GetKeyState("f","P")
-{
-    Send, {Blind}{PgUp} ;PgUp
-    return
-}
-Send, {Blind}{Up}
+    if GetKeyState("f","P")
+    {
+        Send, {Blind}{PgUp} ;PgUp
+        return
+    }
+    Send, {Blind}{Up}
 return
 vk1D & k::
-if GetKeyState("f", "P")
-{
-    Send, {Blind}{Pgdn} ;PgDn
-    return
-}
-Send, {Blind}{down}
+    if GetKeyState("f", "P")
+    {
+        Send, {Blind}{Pgdn} ;PgDn
+        return
+    }
+    Send, {Blind}{down}
 return
 vk1D & j::
-if GetKeyState("f","P")
-{
-    send, {Blind}{Home} ;Home
-    Return
-}
-Send, {Blind}{left}
+    if GetKeyState("f","P")
+    {
+        send, {Blind}{Home} ;Home
+        Return
+    }
+    Send, {Blind}{left}
 Return
 vk1D & l::
-if GetKeyState("f","P")
-{
-    send, {Blind}{End} ;End
-    Return
-}
-Send, {blind}{right}
+    if GetKeyState("f","P")
+    {
+        send, {Blind}{End} ;End
+        Return
+    }
+    Send, {blind}{right}
 Return
 
 ;alt+上下左右
