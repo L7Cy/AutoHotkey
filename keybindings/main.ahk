@@ -6,9 +6,6 @@ SetTitleMatchMode, 2
 ;Relord this script
 vk1D & F1::Reload
 
-;無変換+変換でkeypirinhaを起動
-Alt & vk1C::F13
-
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
 ;変換+SpaceでEnter
@@ -67,16 +64,19 @@ Return
 vk1D & u::
     if GetKeyState("f", "P")
     {
-        Send, {shiftdown}{home}{backspace}{shiftup} ;行のはじめまでbackspace
+        Send, {CtrlDown}{Left}{shiftdown}{Right}{CtrlUp}{shiftup} ;単語単位でbackspace
+        Send, {backspace}
         return
     }
     send,{BackSpace}
 Return
+
 ;無変換＋oでDelete
 vk1D & o::
     if GetKeyState("f", "P")
     {
-        Send, {shiftdown}{end}{delete}{shiftup} ;行のおわりまでdelete
+        Send, {CtrlDown}{Right}{shiftdown}{Left}{CtrlUp}{shiftup} ;単語単位でdelete
+        Send, {delete}
         return
     }
     send,{Delete}
