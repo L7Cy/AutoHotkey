@@ -7,7 +7,7 @@ SetTitleMatchMode, 2
 vk1D & F1::Reload
 
 ;無変換+変換でkeypirinhaを起動
-vk1D & vk1C::F13
+Alt & vk1C::F13
 
 ;無変換+SpaceでEnter
 vk1D & Space::Enter
@@ -24,7 +24,13 @@ return
 Alt & Space::!Enter
 
 ;AltでIME無効(カタカナひらがなでIME有効)
+
 Alt::
+if GetKeyState("vk1C", "P")
+{
+    Send, {F13} ;alt+変換でkeypirinhaを起動
+    return
+}
     IME_SET(0)
     Click,1000,1000,0 ;マウスカーソルの移動
 Return
