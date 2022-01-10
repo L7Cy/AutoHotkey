@@ -21,7 +21,6 @@ return
 Alt & Space::!Enter
 
 ;AltでIME無効(カタカナひらがなでIME有効)
-
 Alt::
     if GetKeyState("vk1C", "P")
     {
@@ -64,7 +63,7 @@ Return
 vk1D & u::
     if GetKeyState("f", "P")
     {
-        Send, {shiftdown}{home}{BackSpace}{ShiftUp}
+        Send, {shiftdown}{home}{BackSpace}{ShiftUp} ;カーソルの左を削除
         Return
     }
     if GetKeyState("vk1C", "P")
@@ -80,7 +79,7 @@ Return
 vk1D & o::
     if GetKeyState("f", "P")
     {
-        Send, {shiftdown}{End}{Delete}{ShiftUp}
+        Send, {shiftdown}{End}{Delete}{ShiftUp} ;カーソルの右を削除
         Return
     }
     if GetKeyState("vk1C", "P")
