@@ -23,11 +23,11 @@ Alt & Space::!Enter
 ;AltでIME無効(カタカナひらがなでIME有効)
 
 Alt::
-if GetKeyState("vk1C", "P")
-{
-    Send, {F13} ;alt+変換でkeypirinhaを起動
-    return
-}
+    if GetKeyState("vk1C", "P")
+    {
+        Send, {F13} ;alt+変換でkeypirinhaを起動
+        return
+    }
     IME_SET(0)
     Click,1000,1000,0 ;マウスカーソルの移動
 Return
@@ -64,6 +64,11 @@ Return
 vk1D & u::
     if GetKeyState("f", "P")
     {
+        Send, {shiftdown}{home}{BackSpace}{ShiftUp}
+        Return
+    }
+    if GetKeyState("vk1C", "P")
+    {
         Send, {CtrlDown}{Left}{shiftdown}{Right}{CtrlUp}{shiftup} ;単語単位でbackspace
         Send, {backspace}
         return
@@ -74,6 +79,11 @@ Return
 ;無変換＋oでDelete
 vk1D & o::
     if GetKeyState("f", "P")
+    {
+        Send, {shiftdown}{End}{Delete}{ShiftUp}
+        Return
+    }
+    if GetKeyState("vk1C", "P")
     {
         Send, {CtrlDown}{Right}{shiftdown}{Left}{CtrlUp}{shiftup} ;単語単位でdelete
         Send, {delete}
