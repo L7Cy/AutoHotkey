@@ -5,54 +5,41 @@ SetTitleMatchMode, 2
 
 ;Relord this script
 ~vk1D & F1::Reload
+~vk1C & Alt::^F1 ;keypirinha
+
+;変換でctrl
+*vk1C::Ctrl
+;無変換を無効
+*vk1D::Return
 
 ;無変換+SpaceでEnter
 ~vk1D & Space::Enter
 ;変換+SpaceでEnter
-Space::Space
 ~vk1C & Space::^Enter
-
 ;alt+spaceでalt+enter
 ~Alt & Space::!Enter
 
 ;AltでIME無効(カタカナひらがなでIME有効)
-Alt::
-    if GetKeyState("vk1C", "P")
-    {
-        Send, {F13} ;alt+変換でkeypirinhaを起動
-        return
-    }
+*Alt::
     IME_SET(0)
     Click,1000,1000,0 ;マウスカーソルの移動
 Return
-
-;変換でctrl
-vk1C::Ctrl
 
 ;無変換+tabでタスクビュー
 ~vk1D & tab::#Tab
 
 ;変換+qでウィンドウを閉じる
-q::
-    if GetKeyState("vk1C","P")
-    {
-        Send, !{F4}
-        Return
-    }
-    send, q
-Return
+q::q
+~vk1C & q::Send, !{F4}
 
 ;fを使う準備
 f::
-    if GetKeyState("vk1D","P")
-    {
-        Return
-    }Else if GetKeyState("vk1C","P")
-    {
-        Send, ^f
-    }
-    Send, f
-Return
+if GetKeyState("vk1D", "P")
+{
+    Return
+}
+Send, f
+return
 
 ;無変換+uでBackspace
 ~vk1D & u::
