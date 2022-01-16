@@ -4,21 +4,16 @@ SetWorkingDir, %A_ScriptDir%
 SetTitleMatchMode, 2
 
 ;Relord this script
-vk1D & F1::Reload
+~vk1D & F1::Reload
 
 ;無変換+SpaceでEnter
-vk1D & Space::Enter
+~vk1D & Space::Enter
 ;変換+SpaceでEnter
-Space::
-    If GetKeyState("vk1C","P")
-    {
-        send, ^{enter}
-        return
-    }
-    send, {space}
-return
+Space::Space
+~vk1C & Space::^Enter
+
 ;alt+spaceでalt+enter
-Alt & Space::!Enter
+~Alt & Space::!Enter
 
 ;AltでIME無効(カタカナひらがなでIME有効)
 Alt::
@@ -35,7 +30,7 @@ Return
 vk1C::Ctrl
 
 ;無変換+tabでタスクビュー
-vk1D & tab::#Tab
+~vk1D & tab::#Tab
 
 ;変換+qでウィンドウを閉じる
 q::
@@ -60,7 +55,7 @@ f::
 Return
 
 ;無変換+uでBackspace
-vk1D & u::
+~vk1D & u::
     if GetKeyState("f", "P")
     {
         If WinActive("ahk_exe WindowsTerminal.exe")
@@ -86,7 +81,7 @@ vk1D & u::
 Return
 
 ;無変換＋oでDelete
-vk1D & o::
+~vk1D & o::
     if GetKeyState("f", "P")
     {
         If WinActive("ahk_exe WindowsTerminal.exe")
@@ -112,7 +107,7 @@ vk1D & o::
 return
 
 ;無変換+ikjlで上下左右
-vk1D & i::
+~vk1D & i::
     if GetKeyState("f","P")
     {
         Send, {Blind}{PgUp} ;PgUp
@@ -120,7 +115,7 @@ vk1D & i::
     }
     Send, {Blind}{Up}
 return
-vk1D & k::
+~vk1D & k::
     if GetKeyState("f", "P")
     {
         Send, {Blind}{Pgdn} ;PgDn
@@ -128,7 +123,7 @@ vk1D & k::
     }
     Send, {Blind}{down}
 return
-vk1D & j::
+~vk1D & j::
     if GetKeyState("f","P")
     {
         send, {Blind}{Home} ;Home
@@ -136,7 +131,7 @@ vk1D & j::
     }
     Send, {Blind}{left}
 Return
-vk1D & l::
+~vk1D & l::
     if GetKeyState("f","P")
     {
         send, {Blind}{End} ;End
@@ -146,7 +141,7 @@ vk1D & l::
 Return
 
 ;alt+上下左右
-Alt & j::!Left
-Alt & l::!Right
-Alt & i::!Up
-Alt & k::!Down
+~Alt & j::!Left
+~Alt & l::!Right
+~Alt & i::!Up
+~Alt & k::!Down
