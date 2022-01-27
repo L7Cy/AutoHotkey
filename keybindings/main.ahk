@@ -38,6 +38,11 @@ if GetKeyState("vk1D", "P")
 {
     Return
 }
+if GetKeyState("vk1C", "P")
+{
+    Send, ^{f}
+    return
+}
 Send, f
 return
 
