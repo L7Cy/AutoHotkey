@@ -12,3 +12,4 @@ vk1D & vkBA::
     Clipboard = %A_Hour%:%A_Min%
     send, ^v
 Return
+

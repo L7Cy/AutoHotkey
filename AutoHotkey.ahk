@@ -16,4 +16,4 @@ SetTitleMatchMode, 2
 Return
 
 #Include, %A_ScriptDir%\keybindings\main.ahk
-;#Include, %A_ScriptDir%\tmp.ahk
+#Include, %A_ScriptDir%\keybindings\win-vind.ahk
