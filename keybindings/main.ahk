@@ -29,22 +29,11 @@ Return
 ~vk1D & tab::#Tab
 
 ;変換+qでウィンドウを閉じる
-q::q
 ~vk1C & q::Send, !{F4}
 
-;fを使う準備
-f::
-if GetKeyState("vk1D", "P")
-{
-    Return
-}
-if GetKeyState("vk1C", "P")
-{
-    Send, ^{f}
-    return
-}
-Send, f
-return
+#If getkeystate("vk1D","P")
+f::Return
+#If
 
 ;無変換+uでBackspace
 ~vk1D & u::
