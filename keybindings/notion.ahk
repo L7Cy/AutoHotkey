@@ -7,7 +7,7 @@ SetWorkingDir, %A_ScriptDir%
 ~Alt & l::Send, ^{vkDD}
 ~Alt & i::send, ^+{Up}
 ~Alt & k::send, ^+{Down}
-~vk1C & n::click 278,240
+~vk1C & n::click 216,240
 ~vk1C & vkDB::send,{Esc}
 ~vk1C & tab::click 383,237
 ~vk1C & vk31::
