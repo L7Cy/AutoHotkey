@@ -126,3 +126,8 @@ Return
 ~Alt & l::!Right
 ~Alt & i::!Up
 ~Alt & k::!Down
+
+#i::#Up
+#k::#Down
+#j::#Left
+#l::#Right
