@@ -10,7 +10,6 @@ Click 980,606
 sleep, 70
 Click 963,900
 Return
-~Alt & q::!Insert
 ~Alt & j::click 128,1026
 ~vk1D & i::!Left
 ~vk1D & k::!Right
