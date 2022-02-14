@@ -35,6 +35,10 @@ Return
 f::Return
 #If
 
+#If getkeystate("vk1D","P")
+w::LWin
+#If
+
 ;無変換+uでBackspace
 ~vk1D & u::
     if GetKeyState("f", "P")
@@ -126,8 +130,3 @@ Return
 ~Alt & l::!Right
 ~Alt & i::!Up
 ~Alt & k::!Down
-
-#i::#Up
-#k::#Down
-#j::#Left
-#l::#Right
