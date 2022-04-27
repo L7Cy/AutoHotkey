@@ -25,9 +25,6 @@ SetTitleMatchMode, 2
     Click,1000,1000,0 ;マウスカーソルの移動
 Return
 
-;無変換+tabでタスクビュー
-~vk1D & tab::#Tab
-
 ;変換+qでウィンドウを閉じる
 ~vk1C & q::Send, !{F4}
 
