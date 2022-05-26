@@ -22,7 +22,7 @@ SetTitleMatchMode, 2
 ;AltでIME無効(カタカナひらがなでIME有効)
 *Alt::
     IME_SET(0)
-    Click,1000,1000,0 ;マウスカーソルの移動
+    ; Click,1000,1000,0 ;マウスカーソルの移動
 Return
 
 ;変換+qでウィンドウを閉じる
@@ -32,9 +32,9 @@ Return
 f::Return
 #If
 
-#If getkeystate("vk1D","P")
-w::LWin
-#If
+; #If getkeystate("vk1D","P")
+; w::LWin
+; #If
 
 ;無変換+uでBackspace
 ~vk1D & u::
