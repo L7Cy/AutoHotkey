@@ -20,3 +20,4 @@ Return
 ; #Include, %A_ScriptDir%\keybindings\win-vind.ahk
 #Include, %A_ScriptDir%\keybindings\osu.ahk
 #Include, %A_ScriptDir%\keybindings\notion.ahk
+#Include, %A_ScriptDir%\keybindings\enter.ahk

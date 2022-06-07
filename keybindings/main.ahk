@@ -12,12 +12,12 @@ SetTitleMatchMode, 2
 ;無変換を無効
 *vk1D::Return
 
-;無変換+SpaceでEnter
-~vk1D & Space::Enter
-;変換+SpaceでEnter
-~vk1C & Space::^Enter
-;alt+spaceでalt+enter
-~Alt & Space::!Enter
+; ;無変換+SpaceでEnter
+; ~vk1D & Space::Enter
+; ;変換+SpaceでEnter
+; ~vk1C & Space::^Enter
+; ;alt+spaceでalt+enter
+; ~Alt & Space::!Enter
 
 ;AltでIME無効(カタカナひらがなでIME有効)
 *Alt::
