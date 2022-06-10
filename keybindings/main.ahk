@@ -12,13 +12,6 @@ SetTitleMatchMode, 2
 ;無変換を無効
 *vk1D::Return
 
-; ;無変換+SpaceでEnter
-; ~vk1D & Space::Enter
-; ;変換+SpaceでEnter
-; ~vk1C & Space::^Enter
-; ;alt+spaceでalt+enter
-; ~Alt & Space::!Enter
-
 ;AltでIME無効(カタカナひらがなでIME有効)
 *Alt::
     IME_SET(0)
@@ -31,10 +24,6 @@ Return
 #If getkeystate("vk1D","P")
 f::Return
 #If
-
-; #If getkeystate("vk1D","P")
-; w::LWin
-; #If
 
 ;無変換+uでBackspace
 ~vk1D & u::
