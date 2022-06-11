@@ -15,7 +15,6 @@ SetTitleMatchMode, 2
 ;AltでIME無効(カタカナひらがなでIME有効)
 *Alt::
     IME_SET(0)
-    ; Click,1000,1000,0 ;マウスカーソルの移動
 Return
 
 ;変換+qでウィンドウを閉じる
