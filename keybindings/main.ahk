@@ -17,6 +17,12 @@ SetTitleMatchMode, 2
     IME_SET(0)
 Return
 
+;ctrl+[でesc+IME無効
+~vk1C & vkDB::
+send,{Esc}
+IME_SET(0)
+Return
+
 #j::#Left
 #l::#Right
 #i::#Up
