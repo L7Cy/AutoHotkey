@@ -4,7 +4,7 @@ SetWorkingDir, %A_ScriptDir%
 SetTitleMatchMode, 2
 
 ;Relord this script
-~vk1D & F1::Reload
+~vk1C & F1::Reload
 ~vk1C & Alt::^F1 ;keypirinha
 
 ;変換でctrl
