@@ -19,22 +19,14 @@ Return
 
 ;ctrl+[でesc+IME無効
 ~vk1C & vkDB::
-send,{Esc}
-IME_SET(0)
+    send,{Esc}
+    IME_SET(0)
 Return
 
 #j::#Left
 #l::#Right
 #i::#Up
 #k::#Down
-#o::
-    if GetKeyState("vk1C", "P")
-    {
-        Send,#^{F4}
-        Return
-    }
-    Send,!{F4}
-    Return
 
 ;変換+qでウィンドウを閉じる
 ~vk1C & q::Send, !{F4}
