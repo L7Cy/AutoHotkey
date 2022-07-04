@@ -39,21 +39,11 @@ f::Return
 ~vk1D & u::
     if GetKeyState("f", "P")
     {
-        If WinActive("ahk_exe WindowsTerminal.exe")
-        {
-            Send, ^{u}
-            return
-        }
         Send, {shiftdown}{home}{BackSpace}{ShiftUp} ;カーソルの左を削除
         Return
     }
     if GetKeyState("vk1C", "P")
     {
-        If WinActive("ahk_exe WindowsTerminal.exe")
-        {
-            Send, !^{h}
-            return
-        }
         Send, {CtrlDown}{Left}{shiftdown}{Right}{CtrlUp}{shiftup} ;単語単位でbackspace
         Send, {backspace}
         return
@@ -65,21 +55,11 @@ Return
 ~vk1D & o::
     if GetKeyState("f", "P")
     {
-        If WinActive("ahk_exe WindowsTerminal.exe")
-        {
-            Send, ^{k}
-            return
-        }
         Send, {shiftdown}{End}{Delete}{ShiftUp} ;カーソルの右を削除
         Return
     }
     if GetKeyState("vk1C", "P")
     {
-        If WinActive("ahk_exe WindowsTerminal.exe")
-        {
-            Send, !{d}
-            return
-        }
         Send, {CtrlDown}{Right}{shiftdown}{Left}{CtrlUp}{shiftup} ;単語単位でdelete
         Send, {delete}
         return

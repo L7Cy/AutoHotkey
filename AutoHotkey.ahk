@@ -21,3 +21,4 @@ Return
 #Include, %A_ScriptDir%\keybindings\notion.ahk
 #Include, %A_ScriptDir%\keybindings\enter.ahk
 #Include, %A_ScriptDir%\keybindings\workflowy.ahk
+#Include, %A_ScriptDir%\keybindings\windowsterminal.ahk
