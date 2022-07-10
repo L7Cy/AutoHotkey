@@ -34,3 +34,17 @@ send,!+{Down}
 Return
 ~vk1C & Space::^Space
 #IfWinActive
+
+
+#IfWinActive,ahk_exe vivaldi.exe
+~vk1C & p::
+send,^+{p}
+Return
+~alt & i::
+send,!+{Up}
+Return
+~alt & k::
+send,!+{Down}
+Return
+~vk1C & Space::^Space
+#IfWinActive
